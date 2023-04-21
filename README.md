@@ -8,7 +8,7 @@ mmdetection for ReasoningRCNN
 
 3：cd mmdetection
 
-4：onda install cython #pip install cython
+4：conda install cython #pip install cython
 
 5：./compile.sh
 
