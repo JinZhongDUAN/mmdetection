@@ -4,7 +4,7 @@ mmdetection for ReasoningRCNN
 # 安装
 1：创建conda虚拟环境，安装所需要的库，包括mmcv，pytorch，torchvision等并激活环境（先安装mmcv后安装mmdetection）
 
-2：git
+2：git clone https://github.com/Jinzhong-Duan/mmdetection.git
 
 3：cd mmdetection
 
