@@ -10,7 +10,7 @@ mmdetection for ReasoningRCNN
 6：python setup.py install #pip install .
 #测试代码
 预训练模型需要自己下载
-import mmcv
+```import mmcv
 from mmcv.runner import load_checkpoint
 from mmdet.models import build_detector
 from mmdet.apis import inference_detector, show_result
@@ -35,3 +35,4 @@ show_result(img, result)
 # for i, result in enumerate(inference_detector(model, imgs, cfg, device='cuda:0')):
 #     print(i, imgs[i])
 #     show_result(imgs[i], result)
+```
