@@ -3,11 +3,17 @@ mmdetection for ReasoningRCNN
 对官方mmetection0.5.7进行了一些修改使其能够用于Reasoning-RCNN《Reasoning-RCNN Unifying Adaptive Global Reasoning into Large-scale Object Detection》
 # 安装
 1：创建conda虚拟环境，安装所需要的库，包括mmcv，pytorch，torchvision等并激活环境（先安装mmcv后安装mmdetection）
+
 2：git
+
 3：cd mmdetection
+
 4：onda install cython #pip install cython
+
 5：./compile.sh
+
 6：python setup.py install #pip install .
+
 #测试代码
 预训练模型需要自己下载
 ```import mmcv
