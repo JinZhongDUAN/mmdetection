@@ -239,11 +239,6 @@ class ReasoningRCNN(BaseDetector, RPNTestMixin):
             bbox_roi_extractor = self.bbox_roi_extractor[i]
             bbox_head = self.bbox_head[i]
             rois = bbox2roi([res.bboxes for res in sampling_results])
-            '''rois, rois_index = bbox2roi(
-                [(res.pos_bboxes, res.neg_bboxes) for res in sampling_results],
-                return_index=True)此部分代码有问题，mmdet里的bbox2roi函数无return_index参数
-                并且之返回一个参数，此处把rois_index删除，但后面mask head forward and loss里用到了次参数
-                不确定是否对模型性能产生影响，参考cascade_rcnn的代码把mask head forward and loss里的代码改掉'''
             bbox_feats = bbox_roi_extractor(x[:bbox_roi_extractor.num_inputs],
                                             rois)
             # without upperneck
@@ -274,7 +269,7 @@ class ReasoningRCNN(BaseDetector, RPNTestMixin):
                         x[:mask_roi_extractor.num_inputs], pos_rois)
                     mask_feats = self.forward_upper_neck(mask_feats, i)
                 else:
-                    # reuse positive bbox featsci 更改源代码，此代码参考cascade-rcnn
+                    # reuse positive bbox featsci
                     pos_inds = []
                     device = bbox_feats.device
                     for res in sampling_results:
